@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="QuotationPortal.Api/QuotationPortal.Api.csproj" Id="ef4b5b5d-7030-4a88-864b-243c8b7eaeba" />
+  <Project Path="QuotationPortal.Application/QuotationPortal.Application.csproj" Id="92469f35-aab2-4524-b874-2f99740e2b7e" />
+  <Project Path="QuotationPortal.Domain/QuotationPortal.Domain.csproj" Id="f7f1026e-2595-4961-9556-ee0df6156635" />
+  <Project Path="QuotationPortal.Infrastrcuture/QuotationPortal.Infrastructure.csproj" Id="099a2e31-4e27-462a-ab06-6881bf2b40db" />
+  <Project Path="QuotationPortal.Tests/QuotationPortal.Tests.csproj" Id="3dcd6b61-a62b-4df2-8ce5-329dc8551663" />
+  <Project Path="QuotationPortal.Worker/QuotationPortal.Worker.csproj" Id="b599db08-8796-46bf-a242-061a190c9d94" />
+</Solution>
