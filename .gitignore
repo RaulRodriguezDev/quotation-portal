@@ -11,3 +11,11 @@
 /backend/QuotationPortal.Tests/obj
 /backend/QuotationPortal.Infrastrcuture/obj
 /backend/QuotationPortal.Domain/obj
+/backend/QuotationPortal.Application/bin/Debug/net10.0
+/backend/.vs/ProjectEvaluation
+/.vs
+/backend/QuotationPortal.Api/bin/Debug/net10.0
+/backend/QuotationPortal.Api/logs
+/backend/QuotationPortal.Domain/bin/Debug/net10.0
+/backend/QuotationPortal.Infrastrcuture/bin/Debug/net10.0
+/backend/QuotationPortal.Worker/bin/Debug/net10.0

@@ -14,5 +14,6 @@
   <ItemGroup>
     <ProjectReference Include="..\QuotationPortal.Application\QuotationPortal.Application.csproj" />
     <ProjectReference Include="..\QuotationPortal.Domain\QuotationPortal.Domain.csproj" />
+    <ProjectReference Include="..\QuotationPortal.Infrastrcuture\QuotationPortal.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
