@@ -23,7 +23,7 @@ jobs:
 
       - name: Build
         working-directory: backend
-        run: dotnet build QuotationPortal.sln -c Release
+        run: dotnet build QuotationPortal.slnx -c Release
 
   deploy:
     needs: build_and_test
