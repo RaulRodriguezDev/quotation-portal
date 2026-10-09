@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "Quotation Portal API",
+    "description": "Product catalog endpoints. Set the baseUrl variable (local: http://localhost:5098, Railway: your public URL).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5098" },
+    { "key": "productId", "value": "ABA0225S01" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Healthy', () => { pm.response.to.have.status(200); pm.expect(pm.response.text()).to.eql('Healthy'); });"
+      ] } }]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Search products",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/products?search=catsup&page=1&pageSize=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "products"],
+              "query": [
+                { "key": "search", "value": "catsup" },
+                { "key": "categoryId", "value": "", "disabled": true },
+                { "key": "brandId", "value": "", "disabled": true },
+                { "key": "originId", "value": "", "disabled": true },
+                { "key": "page", "value": "1" },
+                { "key": "pageSize", "value": "20" }
+              ]
+            }
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('200 and paged shape', () => {",
+            "  pm.response.to.have.status(200);",
+            "  const b = pm.response.json();",
+            "  pm.expect(b).to.have.property('items').that.is.an('array');",
+            "  pm.expect(b).to.have.property('totalCount');",
+            "  pm.expect(b).to.have.property('totalPages');",
+            "});"
+          ] } }]
+        },
+        {
+          "name": "Get product by id",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/products/{{productId}}" },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('200 and product', () => {",
+            "  pm.response.to.have.status(200);",
+            "  const p = pm.response.json();",
+            "  pm.expect(p.id).to.eql(pm.variables.get('productId'));",
+            "  pm.expect(p.price).to.be.a('number');",
+            "});"
+          ] } }]
+        },
+        {
+          "name": "Get product by id - not found",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/products/DOES-NOT-EXIST" },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('404', () => pm.response.to.have.status(404));"
+          ] } }]
+        }
+      ]
+    },
+    {
+      "name": "Lookups",
+      "item": [
+        {
+          "name": "List categories",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/product-categories" },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('200 and array', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });"
+          ] } }]
+        },
+        {
+          "name": "List brands",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/product-brands" },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('200 and array', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });"
+          ] } }]
+        },
+        {
+          "name": "List origins",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/product-origins" },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('200 and array', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });"
+          ] } }]
+        }
+      ]
+    }
+  ]
+}

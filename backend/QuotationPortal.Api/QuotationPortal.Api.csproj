@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\QuotationPortal.Application\QuotationPortal.Application.csproj" />
     <ProjectReference Include="..\QuotationPortal.Infrastrcuture\QuotationPortal.Infrastructure.csproj" />
   </ItemGroup>
