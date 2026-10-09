@@ -1,3 +1,4 @@
+using QuotationPortal.Application;
 using QuotationPortal.Infrastructure;
 using QuotationPortal.Infrastructure.Logging;
 using Serilog;
@@ -9,6 +10,7 @@ try
     var builder = WebApplication.CreateBuilder(args);
 
     builder.Services.AddQuotationPortalLogging(builder.Configuration);
+    builder.Services.AddApplication();
     builder.Services.AddInfrastructure(builder.Configuration);
     builder.Services.AddControllers();
     // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
