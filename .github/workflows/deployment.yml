@@ -6,6 +6,7 @@ on:
     paths:
       - 'backend/**'
       - '.github/workflows/deployment.yml'
+  workflow_dispatch:
 
   pull_request:
     paths:
