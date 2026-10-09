@@ -1,0 +1,23 @@
+name: Deployment
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/deployment.yml'
+
+  pull_request:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/deployment.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run: echo "Running deployment workflow"
