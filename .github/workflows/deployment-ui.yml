@@ -1,0 +1,14 @@
+name: Deployment UI
+on:
+    push:
+        branches: [main]
+        paths:
+            - "quotation-portal-app/**"
+            - ".github/workflows/deployment-ui.yml"
+    workflow_dispatch:
+jobs:
+    test-deploy-ui:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Test step
+                run: echo "Running test step for Deployment UI workflow"
