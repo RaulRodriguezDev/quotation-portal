@@ -1,8 +1,8 @@
-import { FooterTypeElement } from "@/types";
+import { FooterTypeItem } from "@/types";
 import FooterElement from "./FooterElement";
 import { Blocks, House, Menu, ShoppingCart } from "lucide-react";
 
-const footerElements: FooterTypeElement[] = [
+const footerElements: FooterTypeItem[] = [
     {
         text:"Inicio",
         icon: <House color="#eff6ff" />
