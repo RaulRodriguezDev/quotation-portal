@@ -3,7 +3,7 @@ const Logo = ({ className }: { className?: string }): React.ReactElement => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 200 48"
+            viewBox="0 0 136 48"
             role="img"
             aria-label="Quotation Portal"
             className={className}
