@@ -127,6 +127,14 @@
     --sidebar-ring: oklch(0.556 0 0);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-brand-50);
+  caret-color: var(--color-brand-50);
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
